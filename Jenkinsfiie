@@ -1,14 +1,24 @@
-// hello.groovy
+pipeline {
+    agent any
 
-def name = "Darshan"
-def age = 25
+    stages {
+        stage('Clone Repo') {
+            steps {
+                git url: 'https://github.com/Darshan325469/pipeline-eg.git',
+                    credentialsId: 'github-token'
+            }
+        }
 
-println "Hello, $name!"
-println "You are $age years old."
+        stage('Build') {
+            steps {
+                echo 'Building project...'
+            }
+        }
 
-// simple function
-def add(a, b) {
-    return a + b
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+            }
+        }
+    }
 }
-
-println "Sum: ${add(5, 3)}"
