@@ -4,21 +4,9 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git url: 'https://github.com/Darshan325469/pipeline-eg.git',
-                    credentialsId: 'github-token'
+                echo "Hello World"
             }
         }
 
-        stage('Build') {
-            steps {
-                echo 'Building project...'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-            }
-        }
     }
 }
