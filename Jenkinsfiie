@@ -1,0 +1,14 @@
+// hello.groovy
+
+def name = "Darshan"
+def age = 25
+
+println "Hello, $name!"
+println "You are $age years old."
+
+// simple function
+def add(a, b) {
+    return a + b
+}
+
+println "Sum: ${add(5, 3)}"
